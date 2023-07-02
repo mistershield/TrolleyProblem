@@ -354,8 +354,11 @@
 -analyzer:"D:/Documents/Unity/Versions/2022.3.3f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/BasicClickableObject.cs"
 "Assets/Scripts/Choices.cs"
+"Assets/Scripts/DragAndDrop.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/PausedScreen.cs"
 "Assets/Scripts/ProblemChanger.cs"
+"Assets/Scripts/SceneManagerScript.cs"
 -langversion:9.0
 
 /deterministic
