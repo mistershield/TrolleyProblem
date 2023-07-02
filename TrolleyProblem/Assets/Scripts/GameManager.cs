@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     private int currentProblem = 0;
     //A boolean that dictates if the player has made a choice
     private bool madeAChoice = false;
+    //Saves if the player made a correct choice
+    private bool madeAGoodChoice;
 
     //Sets the time for the first problem
     private void Start()
@@ -34,7 +36,7 @@ public class GameManager : MonoBehaviour
 
             if (timer <= 0)
             {
-                DoActionBasedOnChoice("default");
+                DoActionBasedOnChoice("default", false);
             }
         }
     }
@@ -42,23 +44,30 @@ public class GameManager : MonoBehaviour
     //Changes the current problem, updates the timer, and resets the madeAChoice variable
     public void ChangeProblem()
     {
-        if (currentProblem < problems.Count - 1)
+        if(madeAGoodChoice)
         {
-            problems[currentProblem].gameObject.SetActive(false);
-            timer = problems[currentProblem].time;
-            currentProblem++;
-            madeAChoice = false;
-            problems[currentProblem].gameObject.SetActive(true);
-            problemChanger.SetActive(false);
+            if (currentProblem < problems.Count - 1)
+            {
+                problems[currentProblem].gameObject.SetActive(false);
+                currentProblem++;
+                problems[currentProblem].gameObject.SetActive(true);
+            }
         }
+        else 
+        {
+            problems[currentProblem].ResetChoice();
+        }
+        madeAChoice = false;
+        problemChanger.SetActive(false);
+        timer = problems[currentProblem].time;
     }
 
     //Tells the current problem the choice the player made, and activates the problemChanger object, and sets madeAChoiceto true
-    public void DoActionBasedOnChoice(string description)
+    public void DoActionBasedOnChoice(string description, bool isCorrect)
     {
         if (!madeAChoice)
         {
-            Debug.Log("Made a choice");
+            madeAGoodChoice = isCorrect;
             problems[currentProblem].choiceOption[description].SetActive(true);
             madeAChoice = true;
             problemChanger.SetActive(true);
