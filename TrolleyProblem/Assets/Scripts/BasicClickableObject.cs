@@ -8,10 +8,12 @@ public class BasicClickableObject : MonoBehaviour
     public string description;
     //A reference to the game manager
     public GameManager gameManager;
+    //A boolean that tells if the choice is correct
+    public bool isCorrectAnswer;
 
     //Detects when the player clicks on it
     private void OnMouseDown()
     {
-        gameManager.DoActionBasedOnChoice(description);
+        gameManager.DoActionBasedOnChoice(description, isCorrectAnswer);
     }
 }

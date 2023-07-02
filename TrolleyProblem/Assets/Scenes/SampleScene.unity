@@ -279,6 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: eggs
   gameManager: {fileID: 470968188}
+  isCorrectAnswer: 0
 --- !u!65 &131080000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -832,6 +833,7 @@ MonoBehaviour:
   ResultObjects:
   - {fileID: 1326484579}
   - {fileID: 812466527}
+  dragAndDropObjects: []
 --- !u!4 &893822469
 Transform:
   m_ObjectHideFlags: 0
@@ -1291,6 +1293,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218403320}
   m_CullTransparentMesh: 1
+--- !u!1 &1220959530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9199005142547130292, guid: 6c77a59ba38cf9f4c83824ae1b5f765e, type: 3}
+  m_PrefabInstance: {fileID: 1540880292346858275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1277959409 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
@@ -1576,6 +1583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: eggs
   gameManager: {fileID: 470968188}
+  isCorrectAnswer: 0
 --- !u!65 &1390481992
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1711,6 +1719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: cereal
   gameManager: {fileID: 470968188}
+  isCorrectAnswer: 0
 --- !u!65 &1575866660
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2380,6 +2389,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 954599777}
     - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
+      propertyPath: dragAndDropObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
       propertyPath: choicesDescription.Array.data[0]
       value: 
       objectReference: {fileID: 583146384}
@@ -2387,6 +2400,10 @@ PrefabInstance:
       propertyPath: choicesDescription.Array.data[1]
       value: 
       objectReference: {fileID: 1390481991}
+    - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
+      propertyPath: dragAndDropObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1220959530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2485,6 +2502,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 470968188}
+    - target: {fileID: 7351478011275520412, guid: 6f76822a866cb1a40bf8b39ec19f6fc7, type: 3}
+      propertyPath: isCorrectAnswer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
