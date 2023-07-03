@@ -1,94 +1,50 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     public Text dialogueText;
-    public string[] lines;
     public float textSpeed = 0.05f;
-    public float deltaTextSpeed = 0.01f;
-    private float tempTextSpeed;
-
-    private int currentLineIndex = -1;
-    private bool isFastForwarding = false;
-    private bool isTyping = false;
     private string currentLine = "";
 
-    private float lastClickTime;
-    private float doubleClickDelay = 0.3f;
+    public Dictionary<string, string> GameDialogue;
+
+    private void Awake()
+    {
+        // Initialize the scene dialogues
+        GameDialogue = new Dictionary<string, string>();
+
+        //Narration
+        GameDialogue["Chapter1"] = "This is a game about Stanley.";
+
+        // Add dialogues for each option
+        GameDialogue["Scene1Option1"] = "Turning off his alarm Stanley stretched and rose up out of bed, wide awake he was ready to face the day.";
+
+        GameDialogue["Scene1Option0"] = "With a lazy wave Stanley slapped the snooze button before rolling over and going back to sleep. Refusing to wake up, Stanley slowly wasted away.";
+
+        GameDialogue["Scene1Option2"] = "Forcefully throwing the alarm in frustration the grating beep stopped suddenly as it burst apart on impact with the wall.";        
+    }
 
     private void Start()
     {
-        NextLine();
-        tempTextSpeed = textSpeed;
-    }
+       PlayDialogue("Chapter1");
+    }    
 
-    private void Update()
+    public void PlayDialogue(string sceneName)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (!isTyping)
-            {
-                NextLine();
-            }
-
-            lastClickTime = Time.time;
-        }
-
-        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
-        {
-            textSpeed = 0.00001f;
-        }
-        else
-        {
-            textSpeed = tempTextSpeed;
-        }        
-    }
-
-    private IEnumerator TypeLine()
-    {
-        isTyping = true;
+        string nextLine = GameDialogue[sceneName];
         dialogueText.text = "";
-        currentLine = lines[currentLineIndex];
-
-        //dialogueText.text = "";
-
-        //foreach (char letter in lines[currentLineIndex].ToCharArray())
-        //{
-        //    if (!isFastForwarding)
-        //    {
-        //        dialogueText.text += letter;
-        //        yield return new WaitForSeconds(textSpeed);
-        //    }
-        //    else
-        //    {
-        //        dialogueText.text = lines[currentLineIndex]; // Set the full line instantly
-        //    }
-        //}
-
-        for (int i = 0; i < currentLine.Length; i++)
-        {
-            dialogueText.text += currentLine[i];
-            yield return new WaitForSeconds(textSpeed);
-        }
-
-        isTyping = false;
-        isFastForwarding = false;
+        StartCoroutine(TypeLine(nextLine));        
     }
 
-    private void NextLine()
-    {
-        currentLineIndex++;
-
-        if (currentLineIndex < lines.Length)
+    private IEnumerator TypeLine(string lineToPrint)
+    {        
+        for (int i = 0; i < lineToPrint.Length; i++)
         {
-            StartCoroutine(TypeLine());
-        }
-        else
-        {
-            // Dialogue is finished, do something else (e.g., load next scene)
+            dialogueText.text += lineToPrint[i];
+            yield return new WaitForSeconds(textSpeed);
         }
     }
 
