@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     //A reference to the game element that tells the gamemanager to change problems
     public GameObject problemChanger;
+    //A reference to the timer object on the scene
+    public Timer timerObject;
     //A list of all the problems in the game
     public List<Choices> problems = new List<Choices>();
 
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         timer = problems[currentProblem].time;
+        timerObject.timerValue = timer;
     }
 
     //If the player hasn't made a choice the code makes a countdown,
@@ -60,6 +63,8 @@ public class GameManager : MonoBehaviour
         madeAChoice = false;
         problemChanger.SetActive(false);
         timer = problems[currentProblem].time;
+        timerObject.timerValue = timer;
+        timerObject.UpdateTimer();
     }
 
     //Tells the current problem the choice the player made, and activates the problemChanger object, and sets madeAChoiceto true
@@ -70,6 +75,8 @@ public class GameManager : MonoBehaviour
             madeAGoodChoice = isCorrect;
             problems[currentProblem].choiceOption[description].SetActive(true);
             madeAChoice = true;
+            timerObject.timerValue = 0;
+            timerObject.UpdateTimer();
             problemChanger.SetActive(true);
         }
     }
