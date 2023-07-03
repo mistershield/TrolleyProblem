@@ -1384,7 +1384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7351478011275520412, guid: 6f76822a866cb1a40bf8b39ec19f6fc7, type: 3}
       propertyPath: description
-      value: eggs
+      value: Eggs
       objectReference: {fileID: 0}
     - target: {fileID: 7351478011275520412, guid: 6f76822a866cb1a40bf8b39ec19f6fc7, type: 3}
       propertyPath: gameManager
@@ -1769,6 +1769,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6125292525524749038, guid: 6f76822a866cb1a40bf8b39ec19f6fc7, type: 3}
   m_PrefabInstance: {fileID: 839305743}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &867494682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 867494684}
+  - component: {fileID: 867494683}
+  m_Layer: 0
+  m_Name: Dialogue2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &867494683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867494682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58456aeaccf5fe248b6699b06be4fd50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionsList:
+  - Choice2
+  - Cereal
+  - Eggs
+  - Default
+  dialoguesList:
+  - Walking into the kitchen Stanley takes in his opinions for breakfast, his stomach
+    grumbling hungrily
+  - Grabbing the milk from the fridge, Stanley pours himself a bowl of cereal. However
+    halfway through the bowl he is rudely reminded of his lactose intolerance.
+  - Stanley looked at the time and decided they had time to make something quick
+    to eat. With dubious skill Stanley whipped up and made a healthy breakfast for
+    himself
+  - Hurrying out the door, Stanley decided to grab something to eat on the way there.
+--- !u!4 &867494684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867494682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 574.4182, y: 368.47122, z: -141.95213}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &954599777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2332,7 +2390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7351478011275520412, guid: 6f76822a866cb1a40bf8b39ec19f6fc7, type: 3}
       propertyPath: description
-      value: Throw the alarm to the wall
+      value: Snooze
       objectReference: {fileID: 0}
     - target: {fileID: 7351478011275520412, guid: 6f76822a866cb1a40bf8b39ec19f6fc7, type: 3}
       propertyPath: gameManager
@@ -3332,6 +3390,7 @@ GameObject:
   - component: {fileID: 1387538786}
   - component: {fileID: 1387538790}
   - component: {fileID: 1387538791}
+  - component: {fileID: 1387538792}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3416,6 +3475,7 @@ RectTransform:
   m_Children:
   - {fileID: 1750207354}
   - {fileID: 768662913}
+  - {fileID: 1869789282}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3449,6 +3509,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 1750207353}
+--- !u!114 &1387538792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387538785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b012b5889c6025541bb36ea6b577ae04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 1869789279}
+  textSpeed: 0.05
+  dialogueContainerList:
+  - {fileID: 1748607112}
+  - {fileID: 867494683}
 --- !u!1001 &1456986040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4139,6 +4216,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7351478011275520412, guid: 6f76822a866cb1a40bf8b39ec19f6fc7, type: 3}
+      propertyPath: description
+      value: Cereal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351478011275520412, guid: 6f76822a866cb1a40bf8b39ec19f6fc7, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 470968188}
@@ -4253,6 +4334,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 775239494}
   m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1748607111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1748607113}
+  - component: {fileID: 1748607112}
+  m_Layer: 0
+  m_Name: Dialogue1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1748607112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748607111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58456aeaccf5fe248b6699b06be4fd50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionsList:
+  - Choice1
+  - Wake up
+  - Snooze
+  - Default
+  dialoguesList:
+  - This is the first choice
+  - Turning off their alarm Stanley stretched and rose up out of bed, wide awake
+    he was ready to face the day
+  - Forcefully throwing the alarm in frustration the grating beep stopped suddenly
+    as it burst apart on impact with the wall.
+  - With a lazy wave Stanley slapped the snooze button before rolling over and going
+    back to sleep. Refusing to wake up, Stanley slowly wasted away.
+--- !u!4 &1748607113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748607111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 574.4182, y: 368.47122, z: -141.95213}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1750207353
 GameObject:
@@ -4784,6 +4922,157 @@ Transform:
   m_Father: {fileID: 234490683}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1869789278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869789282}
+  - component: {fileID: 1869789281}
+  - component: {fileID: 1869789279}
+  - component: {fileID: 1869789280}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1869789279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869789278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!111 &1869789280
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869789278}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!222 &1869789281
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869789278}
+  m_CullTransparentMesh: 1
+--- !u!224 &1869789282
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869789278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1387538789}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -41.176804}
+  m_SizeDelta: {x: 590.5242, y: 132.3536}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1921226237
 GameObject:
   m_ObjectHideFlags: 0
@@ -5162,6 +5451,10 @@ PrefabInstance:
       propertyPath: timerObject
       value: 
       objectReference: {fileID: 768662914}
+    - target: {fileID: 6546663826275242214, guid: 07c2be1354a0a8b47883030e1b836584, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 1387538792}
     - target: {fileID: 6546663826275242214, guid: 07c2be1354a0a8b47883030e1b836584, type: 3}
       propertyPath: problems.Array.size
       value: 5

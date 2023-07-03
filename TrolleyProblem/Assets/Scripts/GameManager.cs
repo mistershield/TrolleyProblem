@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public Timer timerObject;
     //A reference to the music player on the scene
     public MusicPlayer musicPlayer;
+    //A reference to the dialogue manager in the scene
+    public DialogueManager dialogueManager;
     //A list of all the problems in the game
     public List<Choices> problems = new List<Choices>();
 
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     {
         timer = problems[currentProblem].time;
         timerObject.timerValue = timer;
+        dialogueManager.PlayDialogue(currentProblem, "Choice" + (currentProblem + 1));
     }
 
     //If the player hasn't made a choice the code makes a countdown,
@@ -41,7 +44,7 @@ public class GameManager : MonoBehaviour
 
             if (timer <= 0)
             {
-                DoActionBasedOnChoice("default", false);
+                DoActionBasedOnChoice("Default", false);
             }
         }
     }
@@ -68,6 +71,7 @@ public class GameManager : MonoBehaviour
         timer = problems[currentProblem].time;
         timerObject.timerValue = timer;
         timerObject.UpdateTimer();
+        dialogueManager.PlayDialogue(currentProblem, "Choice" + (currentProblem + 1));
     }
 
     //Tells the current problem the choice the player made, and activates the problemChanger object, and sets madeAChoiceto true
@@ -85,6 +89,7 @@ public class GameManager : MonoBehaviour
             timerObject.timerValue = 0;
             timerObject.UpdateTimer();
             problemChanger.SetActive(true);
+            dialogueManager.PlayDialogue(currentProblem, description);
         }
     }
 }

@@ -28,7 +28,7 @@ public class Choices : MonoBehaviour
     //Sets the default  choice and fills choiceOption using the choicesDescription and ResultObjects
     private void Start()
     {
-        choiceOption.Add("default", defaultChoice);
+        choiceOption.Add("Default", defaultChoice);
 
         for (int i = 0; i < choicesDescription.Count; i++)
         {
