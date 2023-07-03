@@ -66,12 +66,15 @@ public class GameManager : MonoBehaviour
             problems[currentProblem].ResetChoice();
             musicPlayer.PlayNormalMusic();
         }
-        madeAChoice = false;
-        problemChanger.SetActive(false);
-        timer = problems[currentProblem].time;
-        timerObject.timerValue = timer;
-        timerObject.UpdateTimer();
-        dialogueManager.PlayDialogue(currentProblem, "Choice" + (currentProblem + 1));
+        if(currentProblem < problems.Count)
+        {
+            madeAChoice = false;
+            problemChanger.SetActive(false);
+            timer = problems[currentProblem].time;
+            timerObject.timerValue = timer;
+            timerObject.UpdateTimer();
+            dialogueManager.PlayDialogue(currentProblem, "Choice" + (currentProblem + 1));
+        }
     }
 
     //Tells the current problem the choice the player made, and activates the problemChanger object, and sets madeAChoiceto true

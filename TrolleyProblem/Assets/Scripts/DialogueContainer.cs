@@ -8,9 +8,10 @@ public class DialogueContainer : MonoBehaviour
     public List<string> dialoguesList = new List<string>();
     public Dictionary<string, string> dialogueDictorinary = new Dictionary<string, string>();
 
-    private void Start()
+
+    private void Awake()
     {
-        for(int i = 0; i < dialoguesList.Count; i++)
+        for (int i = 0; i < dialoguesList.Count; i++)
         {
             dialogueDictorinary.Add(descriptionsList[i], dialoguesList[i]);
         }
