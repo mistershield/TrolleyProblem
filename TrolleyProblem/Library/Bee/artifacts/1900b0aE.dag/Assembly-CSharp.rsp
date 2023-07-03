@@ -356,6 +356,7 @@
 "Assets/Scripts/Choices.cs"
 "Assets/Scripts/DragAndDrop.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/MusicPlayer.cs"
 "Assets/Scripts/PausedScreen.cs"
 "Assets/Scripts/ProblemChanger.cs"
 "Assets/Scripts/SceneManagerScript.cs"

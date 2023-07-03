@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject problemChanger;
     //A reference to the timer object on the scene
     public Timer timerObject;
+    //A reference to the music player on the scene
+    public MusicPlayer musicPlayer;
     //A list of all the problems in the game
     public List<Choices> problems = new List<Choices>();
 
@@ -59,6 +61,7 @@ public class GameManager : MonoBehaviour
         else 
         {
             problems[currentProblem].ResetChoice();
+            musicPlayer.PlayNormalMusic();
         }
         madeAChoice = false;
         problemChanger.SetActive(false);
@@ -72,6 +75,10 @@ public class GameManager : MonoBehaviour
     {
         if (!madeAChoice)
         {
+            if(!isCorrect)
+            {
+                musicPlayer.PlayBadMusic();
+            }
             madeAGoodChoice = isCorrect;
             problems[currentProblem].choiceOption[description].SetActive(true);
             madeAChoice = true;
