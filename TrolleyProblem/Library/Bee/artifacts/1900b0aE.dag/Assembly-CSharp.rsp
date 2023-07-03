@@ -359,6 +359,7 @@
 "Assets/Scripts/PausedScreen.cs"
 "Assets/Scripts/ProblemChanger.cs"
 "Assets/Scripts/SceneManagerScript.cs"
+"Assets/Scripts/Timer.cs"
 -langversion:9.0
 
 /deterministic
