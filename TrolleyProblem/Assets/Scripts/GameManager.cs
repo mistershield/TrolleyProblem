@@ -103,6 +103,7 @@ public class GameManager : MonoBehaviour
             {
                 problemChanger.SetActive(true);
             }
+            problems[currentProblem].DeactivateOptions();
             madeAGoodChoice = isCorrect;
             problems[currentProblem].choiceOption[description].SetActive(true);
             madeAChoice = true;

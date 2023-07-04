@@ -8,8 +8,14 @@ public class DragAndDrop : MonoBehaviour
     //The bounds of the object
     public Bounds bounds = new Bounds();
 
+    private float startingZ;
     private bool clicked;
     private Vector3 mousePosition;
+
+    private void Start()
+    {
+        startingZ = transform.position.z;
+    }
 
     //Detects if the object is being clicked
     private void OnMouseDown()
@@ -29,7 +35,7 @@ public class DragAndDrop : MonoBehaviour
         if (clicked && Time.timeScale > 0)
         {
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
+            transform.position = new Vector3(mousePosition.x, mousePosition.y, startingZ);
             transform.position = bounds.ClosestPoint(transform.position);
         }
     }
