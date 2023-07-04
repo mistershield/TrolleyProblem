@@ -45,6 +45,17 @@ public class Choices : MonoBehaviour
             }
         }
     }
+    public void DeactivateOptions()
+    {
+        foreach (BasicClickableObject tmpbasicClickable in choicesDescription)
+        {
+            tmpbasicClickable.gameObject.SetActive(false);
+        }
+        for (int i = 0; i < dragAndDropObjects.Count; i++)
+        {
+            dragAndDropObjects[i].SetActive(false);
+        }
+    }
     //Resets all the elements in the choice 
     public void ResetChoice()
     {
@@ -53,8 +64,13 @@ public class Choices : MonoBehaviour
         {
             tmpResultObject.SetActive(false);
         }
+        foreach (BasicClickableObject tmpbasicClickable in choicesDescription)
+        {
+            tmpbasicClickable.gameObject.SetActive(true);
+        }
         for(int i = 0; i < dragAndDropObjects.Count; i++)
         {
+            dragAndDropObjects[i].SetActive(true);
             dragAndDropObjects[i].transform.position = dragAndDropStartingPosition[i];
         }
     }
