@@ -10,6 +10,8 @@ public class Choices : MonoBehaviour
     public float time;
     //The choice that will be selected if the timer runs out and the player dident make a choice
     public GameObject defaultChoice;
+    //An audio clip that will play when the choice is presented
+    public AudioClip contextAudioClip;
 
     //A list of the BasicClickableObjects in the problem
     public List<BasicClickableObject> choicesDescription = new List<BasicClickableObject>();

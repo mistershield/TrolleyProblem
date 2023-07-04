@@ -616,6 +616,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 708902772}
     - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
+      propertyPath: contextAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c616410a70b1b8a4f9e060ccf7f3e862, type: 3}
+    - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
       propertyPath: ResultObjects.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -2754,6 +2758,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1196080021}
     - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
+      propertyPath: contextAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 22b4524607076f54cad9a9eb5e019786, type: 3}
+    - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
       propertyPath: ResultObjects.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -3405,12 +3413,12 @@ MonoBehaviour:
   - Default
   dialoguesList:
   - Walking into the kitchen Stanley takes in his opinions for breakfast, his stomach
-    grumbling hungrily
+    grumbling hungrily.
   - Grabbing the milk from the fridge, Stanley pours himself a bowl of cereal. However
     halfway through the bowl he is rudely reminded of his lactose intolerance.
   - Stanley looked at the time and decided they had time to make something quick
     to eat. With dubious skill Stanley whipped up and made a healthy breakfast for
-    himself
+    himself.
   - Hurrying out the door, Stanley decided to grab something to eat on the way there.
 --- !u!4 &867494684
 Transform:
@@ -3465,12 +3473,11 @@ MonoBehaviour:
   dialoguesList:
   - Walking towards the front of the trolley, Stanley noticed the control console
     was empty and that the tracks ahead had people on them.
-  - Making his choice Stanley, steps away from the lever letting the continue on
-    its course striking the person on the track.
+  - "\u201CMaking his choice Stanley, steps away from the lever letting the continue
+    on its course striking the person on the track."
   - Making his choice Stanley, throws the lever for the track switch turning the
     cart onto the left track. Plowing through the 5 people on the tracks.
-  - Feeling confident in his sense of direction and general fitness, Stanley walks
-    forward with long strides determined to be there on time
+  - Stanley makes the obvious choice and stops the trolley saving everyone.
   - Frozen by indecision the choice was quickly taken out of Stanley's hands as the
     trolley struck the man on the tracks.
 --- !u!4 &889463458
@@ -3867,6 +3874,134 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6125292525524749038, guid: 6f76822a866cb1a40bf8b39ec19f6fc7, type: 3}
   m_PrefabInstance: {fileID: 1052356363}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1066633502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1066633503}
+  - component: {fileID: 1066633504}
+  m_Layer: 0
+  m_Name: Sound effect player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1066633503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066633502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.401913, y: 11.661274, z: -10.935822}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1066633504
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066633502}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1108234053
 GameObject:
   m_ObjectHideFlags: 0
@@ -5239,6 +5374,10 @@ PrefabInstance:
       propertyPath: defaultChoice
       value: 
       objectReference: {fileID: 1243276484}
+    - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
+      propertyPath: contextAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c462e7e1c5b32245afc8f4696cc7fec, type: 3}
     - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
       propertyPath: ResultObjects.Array.size
       value: 2
@@ -6627,7 +6766,8 @@ MonoBehaviour:
   - Give seat to crush
   - Default
   dialoguesList:
-  - 'Stanley hurries away from his home '
+  - As the trolley slows to its next stop, Stanley notices an older woman and his
+    recent crush step on board.
   - Noticing an older lady getting on board, Stanley offers his seat to her.
   - Looking up at the next stop Stanley saw his crush step on board. His Mrs. Right
     as of last week when he saw her help a cat out of a tree and their eyes locked
@@ -7709,13 +7849,14 @@ MonoBehaviour:
   - Snooze
   - Default
   dialoguesList:
-  - This is the first choice
+  - Resting soundly in bed is the hero of this story. But it is now time for him
+    to wake up. Good morning Stanley!
   - Turning off their alarm Stanley stretched and rose up out of bed, wide awake
-    he was ready to face the day
-  - Forcefully throwing the alarm in frustration the grating beep stopped suddenly
-    as it burst apart on impact with the wall.
+    he was ready to face the day.
   - With a lazy wave Stanley slapped the snooze button before rolling over and going
     back to sleep. Refusing to wake up, Stanley slowly wasted away.
+  - Forcefully throwing the alarm in frustration the grating beep stopped suddenly
+    as it burst apart on impact with the wall.
 --- !u!4 &1748607113
 Transform:
   m_ObjectHideFlags: 0
@@ -7963,13 +8104,14 @@ MonoBehaviour:
   - Take the trolley
   - Default
   dialoguesList:
-  - 'Stanley hurries away from his home '
+  - Stanley hurries away from his home, as he walks he thinks about how he will get
+    there.
   - "Spotting a cab Stanley calls it over hoping to get to his destination faster,
-    unfortunately the cab driver doesn\u2019t notice him until it is too late"
+    unfortunately the cab driver doesn\u2019t notice him until it is too late."
   - Spotting a trolley approaching its stop Stanley rushes over, pays his fare, and
     finds a seat.
   - Feeling confident in his sense of direction and general fitness, Stanley walks
-    forward with long strides determined to be there on time
+    forward with long strides determined to be there on time.
 --- !u!4 &1777994182
 Transform:
   m_ObjectHideFlags: 0
@@ -8049,6 +8191,10 @@ PrefabInstance:
       propertyPath: defaultChoice
       value: 
       objectReference: {fileID: 1609409259}
+    - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
+      propertyPath: contextAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 41022854a19303649b3820f7c20923e9, type: 3}
     - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
       propertyPath: ResultObjects.Array.size
       value: 2
@@ -9610,6 +9756,10 @@ PrefabInstance:
       propertyPath: problems.Array.data[4]
       value: 
       objectReference: {fileID: 234490684}
+    - target: {fileID: 6546663826275242214, guid: 07c2be1354a0a8b47883030e1b836584, type: 3}
+      propertyPath: soundEffectAudioSource
+      value: 
+      objectReference: {fileID: 1066633504}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9679,6 +9829,10 @@ PrefabInstance:
       propertyPath: defaultChoice
       value: 
       objectReference: {fileID: 845285795}
+    - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
+      propertyPath: contextAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 39cfd96fc089b8b49a7ae14e6543bac0, type: 3}
     - target: {fileID: 9055215752170975240, guid: 2c3454ad1d5b1f54aac5508248b6d724, type: 3}
       propertyPath: ResultObjects.Array.size
       value: 2

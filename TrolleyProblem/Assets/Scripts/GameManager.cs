@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject problemChanger;
     //A reference to the timer object on the scene
     public Timer timerObject;
+    public AudioSource soundEffectAudioSource;
     //A reference to the music player on the scene
     public MusicPlayer musicPlayer;
     //A reference to the dialogue manager in the scene
@@ -34,6 +35,8 @@ public class GameManager : MonoBehaviour
         timer = problems[currentProblem].time;
         timerObject.timerValue = timer;
         dialogueManager.PlayDialogue(currentProblem, "Choice" + (currentProblem + 1));
+        soundEffectAudioSource.clip = problems[currentProblem].contextAudioClip;
+        soundEffectAudioSource.Play();
     }
 
     //If the player hasn't made a choice the code makes a countdown,
@@ -77,6 +80,8 @@ public class GameManager : MonoBehaviour
             timerObject.UpdateTimer();
             dialogueManager.PlayDialogue(currentProblem, "Choice" + (currentProblem + 1));
         }
+        soundEffectAudioSource.clip = problems[currentProblem].contextAudioClip;
+        soundEffectAudioSource.Play();
     }
 
     //Tells the current problem the choice the player made, and activates the problemChanger object, and sets madeAChoiceto true
@@ -84,7 +89,8 @@ public class GameManager : MonoBehaviour
     {
         if (!madeAChoice)
         {
-            if(!isCorrect)
+            soundEffectAudioSource.Stop();
+            if (!isCorrect)
             {
                 problemChangerText.text = "Try Again";
                 musicPlayer.PlayBadMusic();
