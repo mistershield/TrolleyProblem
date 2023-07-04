@@ -10,10 +10,13 @@ public class BasicClickableObject : MonoBehaviour
     public GameManager gameManager;
     //A boolean that tells if the choice is correct
     public bool isCorrectAnswer;
+    //A reference to the audio source of the object
+    public AudioSource audioSource;
 
     //Detects when the player clicks on it
     private void OnMouseDown()
     {
+        audioSource.Play();
         gameManager.DoActionBasedOnChoice(description, isCorrectAnswer);
     }
 }

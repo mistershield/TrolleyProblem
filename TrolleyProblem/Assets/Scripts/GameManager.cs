@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,7 +17,8 @@ public class GameManager : MonoBehaviour
     public DialogueManager dialogueManager;
     //A list of all the problems in the game
     public List<Choices> problems = new List<Choices>();
-
+    //A reference to the text of the problemChanger
+    public TextMeshPro problemChangerText;
     //The available time for the current problem
     private float timer;
     //The index of the current problem in the problems list
@@ -84,14 +86,22 @@ public class GameManager : MonoBehaviour
         {
             if(!isCorrect)
             {
+                problemChangerText.text = "Try Again";
                 musicPlayer.PlayBadMusic();
+            }
+            else
+            {
+                problemChangerText.text = "Continue";
+            }
+            if(currentProblem != problems.Count-1)
+            {
+                problemChanger.SetActive(true);
             }
             madeAGoodChoice = isCorrect;
             problems[currentProblem].choiceOption[description].SetActive(true);
             madeAChoice = true;
             timerObject.timerValue = 0;
             timerObject.UpdateTimer();
-            problemChanger.SetActive(true);
             dialogueManager.PlayDialogue(currentProblem, description);
         }
     }

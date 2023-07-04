@@ -361,6 +361,7 @@
 "Assets/Scripts/MusicPlayer.cs"
 "Assets/Scripts/PausedScreen.cs"
 "Assets/Scripts/ProblemChanger.cs"
+"Assets/Scripts/ReseterButtons.cs"
 "Assets/Scripts/SceneManagerScript.cs"
 "Assets/Scripts/Timer.cs"
 -langversion:9.0

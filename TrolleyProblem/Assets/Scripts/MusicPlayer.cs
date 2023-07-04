@@ -12,12 +12,14 @@ public class MusicPlayer : MonoBehaviour
     public void PlayNormalMusic()
     {
         audioSource.Stop();
-        audioSource.PlayOneShot(normalMusic);
+        audioSource.clip = normalMusic;
+        audioSource.Play();
     }
 
     public void PlayBadMusic()
     {
         audioSource.Stop();
-        audioSource.PlayOneShot(BadMusic);
+        audioSource.clip = BadMusic;
+        audioSource.Play();
     }
 }
